@@ -10,7 +10,7 @@
 #define findmiddle_h
 
 
-void FindMiddle(int x, int y, int level, int nr,
+void FindMiddle(int*, int x, int y, int level, int nr,
                 int round);
 
 #endif /* findmiddle_h */

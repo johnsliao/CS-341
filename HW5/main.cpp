@@ -6,6 +6,8 @@
 // some change to main
 
 #include "findmiddle.h"
+#include "BT.h"
+#include "Node.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -56,13 +58,14 @@ int main()
     string name;
     fstream inFile("names.txt");
     string namesArr[50]; // assume # names < 50
+    
     int numNames = 0;
     int test[14];
+    int nr=14, level=0;
 
     for (; inFile >> name; numNames++) { // read in names from txt file
         namesArr[numNames] = name;
     }
-    
     
     cout << "UNSORTED LIST" << endl;
     for (int x=0; x<numNames; x++) {
@@ -75,13 +78,17 @@ int main()
     for (int x=0; x<numNames; x++) {
         cout << namesArr[x] << endl;
     }
-    
-    int nr=14, level=0;
 
     FindMiddle(test, 1,nr,(level+1),nr,1);
-    
+
     for (int y =0 ; y<numNames; y++)
         cout << test[y] << endl;
+    
+    BT TREE;
+    for (int y =0 ; y<numNames; y++)
+        TREE.addRootNode (namesArr[test[y]]);
+
+    TREE.inOrderTraverse ();
     
     return 0;
 }

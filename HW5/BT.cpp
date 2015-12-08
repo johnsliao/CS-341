@@ -43,7 +43,7 @@ void BT::locate (Node* y, string v) {  // Bug mentioned by Dan Glade
 Node* BT::findInsertion (Node* tree, string v)
 { string x;
     x = tree -> getVal();
-    cout << count << " compare " << v << " and " << x << endl;
+    //cout << count << " compare " << v << " and " << x << endl;
     if ( v <= x )
         if( tree -> getLH () !=NULL )
         { tree = findInsertion (tree -> getLH(), v);

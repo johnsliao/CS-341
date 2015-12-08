@@ -21,33 +21,29 @@ void FindMiddle(int * _test, int x, int y, int level, int nr, int round) {
 
     if (abs(x-y)<2) {
         if (x==1) {
-            cout << level << " " << setw(2) << x << endl;
-            while(*_test != 0)
+            while(*_test != 0) // add value to end of the list...
                 _test++;
-            *_test = x-1; // -1 since 0-based array
+            *_test = x; // -1 since 0-based array
         }
         if (y==nr) {
-            cout << level << " " << setw(2) << y << endl;
-            while(*_test != 0)
+            while(*_test != 0) // add value to end of the list...
                 _test++;
-            *_test = y-1; // -1 since 0-based array
+            *_test = y; // -1 since 0-based array
         }
         
         return;
     }
     if ((y+x)%2) {
         mid=(x+y+round)/2;
-        cout << level << " " << setw(2) << mid << endl;
-        while(*_test != 0)
+        while(*_test != 0) // add value to end of the list...
             _test++;
-        *_test = mid-1; // -1 since 0-based array
+        *_test = mid; // -1 since 0-based array
     }
     else {
         mid = (x+y)/2;
-        cout << level << " " << setw(2) << mid << endl;
-        while(*_test != 0)
+        while(*_test != 0) // add value to end of the list...
             _test++;
-        *_test = mid-1; // -1 since 0-based array
+        *_test = mid; // -1 since 0-based array
     }
     
     FindMiddle(_test, x,mid,(level+1),nr,-1); // round down left
